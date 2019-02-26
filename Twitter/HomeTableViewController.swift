@@ -13,20 +13,22 @@ class HomeTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]()
     var numTweets: Int!
     
-    //let myRefreshControl = UIRefreshControl()
+    let myRefreshControl = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweet()
 
-        //myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
-        //tableView.refreshControl = myRefreshControl
+        myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
 }
     @objc func loadTweet(){
         
+        let numTweets = 20;
+        
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myParams = ["count": 5]
+        let myParams = ["count": numTweets]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myURL, parameters: myParams, success: { (tweets: [NSDictionary]) in
             
@@ -37,7 +39,7 @@ class HomeTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
-            //self.myRefreshControl.endRefreshing()
+            self.myRefreshControl.endRefreshing()
             
         }, failure: { (Error) in
             print("could not get tweet")
@@ -45,6 +47,43 @@ class HomeTableViewController: UITableViewController {
         
     }
 
+    
+    
+    
+    func loadMoreTweets(){
+        
+        
+    
+        let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        numTweets = numTweets + 20
+        let myParams = ["count": numTweets]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myURL, parameters: myParams, success: { (tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            
+            for tweet in tweets{
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("could not get tweet")
+        })
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
+
+        if indexPath.row + 1 == tweetArray.count {
+            loadMoreTweets()
+        }
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
