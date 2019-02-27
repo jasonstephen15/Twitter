@@ -11,7 +11,7 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 
     var tweetArray = [NSDictionary]()
-    var numTweets: Int!
+    var numTweets = 20
     
     let myRefreshControl = UIRefreshControl()
     
@@ -25,7 +25,7 @@ class HomeTableViewController: UITableViewController {
 }
     @objc func loadTweet(){
         
-        let numTweets = 20;
+        //let numTweets = 20;
         
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numTweets]
@@ -85,7 +85,7 @@ class HomeTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 80
     }
     
     // MARK: - Table view data source
