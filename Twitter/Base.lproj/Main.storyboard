@@ -158,7 +158,7 @@
         <scene sceneID="bFj-NH-lxM">
             <objects>
                 <viewController id="KCI-Ec-NQY" customClass="TweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="l9g-Zh-6Rh">
+                    <view key="view" contentMode="scaleToFill" id="l9g-Zh-6Rh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -177,7 +177,6 @@
                         <constraints>
                             <constraint firstItem="gST-NT-T10" firstAttribute="leading" secondItem="GUU-A7-q3h" secondAttribute="leading" id="3aB-LV-X2h"/>
                             <constraint firstItem="gST-NT-T10" firstAttribute="top" secondItem="GUU-A7-q3h" secondAttribute="top" id="H7U-JH-bfX"/>
-                            <constraint firstItem="gST-NT-T10" firstAttribute="centerX" secondItem="l9g-Zh-6Rh" secondAttribute="centerX" id="ynX-uo-cUQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GUU-A7-q3h"/>
                     </view>
