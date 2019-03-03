@@ -18,6 +18,8 @@ The following **bonus** features are implemented:
 - [ ] User can view their profile in a profile tab. (3pts)
 - [ ] User sees embedded images in tweet if available. (3pts)
 
+<img src='gifp2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ## Twitter - Part I
 
 This is a basic twitter app to read your tweets.
