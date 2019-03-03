@@ -64,40 +64,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-WF-ZYA">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-WF-ZYA">
                                             <rect key="frame" x="16" y="11" width="78" height="77"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="hZW-IS-QLz"/>
-                                                <constraint firstAttribute="width" constant="65" id="lac-Em-SbQ"/>
+                                                <constraint firstAttribute="height" constant="77" id="hZW-IS-QLz"/>
+                                                <constraint firstAttribute="width" constant="78" id="lac-Em-SbQ"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW2-sm-Y4b">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW2-sm-Y4b">
                                             <rect key="frame" x="102" y="11" width="82" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-It-3WE">
-                                            <rect key="frame" x="102" y="37" width="286" height="62"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-It-3WE">
+                                            <rect key="frame" x="102" y="37" width="273" height="62"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-HG-HLj" userLabel="favButton">
-                                            <rect key="frame" x="319" y="109.5" width="30" height="30"/>
+                                            <rect key="frame" x="319" y="109" width="30" height="30.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="UYq-p8-nPQ"/>
-                                                <constraint firstAttribute="height" constant="30" id="lqV-3b-zh2"/>
                                             </constraints>
                                             <state key="normal" image="favor-icon"/>
+                                            <connections>
+                                                <action selector="favoriteTweet:" destination="cDx-y0-6gq" eventType="touchUpInside" id="X00-xS-W3A"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqU-E8-zuc" userLabel="rtButton">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqU-E8-zuc" userLabel="rtButton">
                                             <rect key="frame" x="281" y="109" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="RIy-xj-NXB"/>
                                                 <constraint firstAttribute="width" constant="30" id="mRD-ow-QRg"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="retweet-icon"/>
+                                            <connections>
+                                                <action selector="retweetTweet:" destination="cDx-y0-6gq" eventType="touchUpInside" id="n7Q-FL-YO2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -105,19 +110,21 @@
                                         <constraint firstItem="g6S-WF-ZYA" firstAttribute="leading" secondItem="voy-vU-Pig" secondAttribute="leadingMargin" id="33O-PD-YeN"/>
                                         <constraint firstItem="BqU-E8-zuc" firstAttribute="top" secondItem="H0k-It-3WE" secondAttribute="bottom" constant="10" id="7Nv-UQ-hkN"/>
                                         <constraint firstItem="qW2-sm-Y4b" firstAttribute="top" secondItem="voy-vU-Pig" secondAttribute="topMargin" id="9sd-Vu-Dpu"/>
-                                        <constraint firstAttribute="trailing" secondItem="H0k-It-3WE" secondAttribute="trailing" id="Gk8-eO-9yr"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="BqU-E8-zuc" secondAttribute="bottom" constant="10" id="Gp5-Xn-snb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BqU-E8-zuc" secondAttribute="bottom" id="Gp5-Xn-snb"/>
                                         <constraint firstItem="H0k-It-3WE" firstAttribute="top" secondItem="qW2-sm-Y4b" secondAttribute="bottom" constant="4" id="IqN-ze-obZ"/>
                                         <constraint firstItem="g6S-WF-ZYA" firstAttribute="top" secondItem="voy-vU-Pig" secondAttribute="topMargin" id="JQp-vu-kG8"/>
                                         <constraint firstItem="H0k-It-3WE" firstAttribute="leading" secondItem="g6S-WF-ZYA" secondAttribute="trailing" constant="8" id="ME7-9Q-6yu"/>
-                                        <constraint firstItem="3fX-HG-HLj" firstAttribute="leading" secondItem="BqU-E8-zuc" secondAttribute="trailing" constant="10" id="SMx-7T-vxX"/>
+                                        <constraint firstItem="3fX-HG-HLj" firstAttribute="leading" secondItem="BqU-E8-zuc" secondAttribute="trailing" constant="8" id="SMx-7T-vxX"/>
+                                        <constraint firstAttribute="trailing" secondItem="H0k-It-3WE" secondAttribute="trailing" id="T1l-0w-gSE"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3fX-HG-HLj" secondAttribute="trailing" constant="10" id="XMq-rw-uBc"/>
                                         <constraint firstItem="qW2-sm-Y4b" firstAttribute="leading" secondItem="g6S-WF-ZYA" secondAttribute="trailing" constant="8" id="fkL-b5-JsJ"/>
                                         <constraint firstItem="3fX-HG-HLj" firstAttribute="top" secondItem="H0k-It-3WE" secondAttribute="bottom" constant="10" id="rbt-mk-P7z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favButton" destination="3fX-HG-HLj" id="9dP-Nm-MDO"/>
                                     <outlet property="profileImageView" destination="g6S-WF-ZYA" id="Dbx-zA-r8z"/>
+                                    <outlet property="retweetButton" destination="BqU-E8-zuc" id="ObD-eS-Q8k"/>
                                     <outlet property="tweetContentLabel" destination="H0k-It-3WE" id="FeA-nw-3MC"/>
                                     <outlet property="userNameLabel" destination="qW2-sm-Y4b" id="myU-pL-6PS"/>
                                 </connections>
